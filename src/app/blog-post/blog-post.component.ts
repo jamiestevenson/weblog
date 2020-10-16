@@ -8,7 +8,7 @@ import { PostService } from '../post.service';
 @Component({
   selector: 'app-blog-post',
   templateUrl: './blog-post.component.html',
-  styleUrls: ['./blog-post.component.css']
+  styleUrls: ['./blog-post.component.css', '../app.component.css']
 })
 export class BlogPostComponent implements OnInit {
 
@@ -26,6 +26,7 @@ export class BlogPostComponent implements OnInit {
   
   getPost(): void {
     const id = this.route.snapshot.paramMap.get('id');
+    console.log("trying to get post: " + id);
     this.postService.getPost(id)
       .subscribe(p => this.post = p);
   }

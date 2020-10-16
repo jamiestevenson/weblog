@@ -1,21 +1,51 @@
 /* Application-wide Styles */
+:host {
+  --colour-sun: #ff9f1c;
+  --colour-sand: #FFBF69;
+  --colour-cloud: #FFFFFF;
+  --colour-sky: #CBF3F0;
+  --colour-sea: #2EC4B6;
+}
+
 h1 {
-    color: #369;
+    color: var(--colour-sea);
     font-family: Arial, Helvetica, sans-serif;
     font-size: 250%;
 }
 h2, h3 {
-    color: #444;
+    color: var(--colour-sea);
     font-family: Arial, Helvetica, sans-serif;
     font-weight: lighter;
 }
 body {
+    background-color: var(--colour-cloud);
     margin: 2em;
 }
 body, input[type="text"], button {
-    color: #333;
+    color: var(--colour-sea);
     font-family: Cambria, Georgia;
 }
+
+nav a {
+    display: inline;
+    color: black;
+    padding: 8px 16px;
+    text-decoration: none;
+    text-align: center;
+}
+
+nav a:hover {
+    background-color: var(--colour-sun);
+    color: white;
+  }
+
+nav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 80px;
+}
+
 /* everywhere else */
 * {
     font-family: Arial, Helvetica, sans-serif;

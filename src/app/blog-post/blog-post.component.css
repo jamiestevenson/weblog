@@ -1,6 +1,25 @@
 .ref {
     font-style: italic;
-    color: lightslategray;
-    font-size: 6;
-    align-content: flex-end;
+    color: var(--colour-sea);
+    font-size: x-small;
+    align-items: flex-end;
+
+}
+
+.post-outer {
+    background-color: var(--colour-cloud);
+    padding: 10px;
+    margin: auto;
+    margin-top: 15px;
+    max-width: 500px;
+    min-width: fit-content;
+    border-style: solid;
+    border-color: var(--colour-sea);
+    border-radius: 2px;
+    border-width: 2px;
+}
+
+.post-outer h3 {
+    color: var(--colour-sun);
+    font-weight: bold;
 }

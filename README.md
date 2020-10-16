@@ -35,3 +35,15 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+## Dependencies
+
+### ngx-markdown
+
+https://daviddalbusco.medium.com/add-a-blog-to-your-angular-website-using-markdown-files-31cdb0627bdd
+https://github.com/jfcere/ngx-markdown
+
+### marked
+
+A dependency for ngx-markdown
+https://github.com/markedjs/marked

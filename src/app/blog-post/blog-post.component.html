@@ -1,6 +1,12 @@
-<div *ngIf="post">
+<div *ngIf="post; else noPost" class="post-outer">
     <p class="ref">ID: {{post.id}}</p>
-    <h3>{{post.title | uppercase}}</h3>
+    <h3 class>{{post.title | uppercase}}</h3>
     <p class="ref">Original Post: {{post.date}}</p>
     <div>{{post.body}}</div>
 </div>
+
+<ng-template #noPost>
+    <p>No Content</p>
+</ng-template>
+
+<app-post-renderer></app-post-renderer>

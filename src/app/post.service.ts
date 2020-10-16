@@ -18,4 +18,8 @@ export class PostService {
   getPost(id: string): Observable<BlogPost> {
     return of(POSTS.find(post => post.id === id));
   }
+
+  getLatestPost(): Observable<BlogPost> {
+    return of(POSTS.find(post => post !== null));
+  }
 }
