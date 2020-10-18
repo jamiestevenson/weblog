@@ -9,6 +9,7 @@ import { BlogPostComponent } from './blog-post/blog-post.component';
 import { BlogPostsComponent } from './blog-posts/blog-posts.component';
 import { HomeComponent } from './home/home.component';
 import { PostRendererComponent } from './post-renderer/post-renderer.component';
+import { LogicaPageComponent } from './logica-page/logica-page.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { PostRendererComponent } from './post-renderer/post-renderer.component';
     BlogPostComponent,
     BlogPostsComponent,
     HomeComponent,
-    PostRendererComponent
+    PostRendererComponent,
+    LogicaPageComponent
   ],
   imports: [
     BrowserModule,
