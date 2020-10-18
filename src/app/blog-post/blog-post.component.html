@@ -1,12 +1,7 @@
-<div *ngIf="post; else noPost" class="post-outer">
-    <p class="ref">ID: {{post.id}}</p>
-    <h3 class>{{post.title | uppercase}}</h3>
-    <p class="ref">Original Post: {{post.date}}</p>
-    <div>{{post.body}}</div>
+<div *ngIf="post; else noPost">
+    <app-post-renderer [post]="post"></app-post-renderer>
 </div>
 
 <ng-template #noPost>
-    <p>No Content</p>
+    <p>There is no recent last post</p>
 </ng-template>
-
-<app-post-renderer></app-post-renderer>

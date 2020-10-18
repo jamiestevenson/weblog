@@ -2,31 +2,31 @@ import { BlogPost } from './interfaces/blogPost';
 
 export const POSTS: BlogPost[] = [
     {
-        id: "d7c9db1b-c840-43f5-830a-b6bbf8ac05e9",
+        id: "1",
         date: "2020-10-14",
-        title: "Sample Blog Post One",
-        body: "This is some content for the blog post"
+        title: "First Post",
+        body: "Adding some initial structure to the base angular project"
     },
     {
-        id: 'd7ab839c-7bf1-46de-9a51-e8dedc075739',
-        date: "2020-10-14",
-        title: "Sample Blog Post Two",
-        body: "This is some content for the blog post"
+        id: '2',
+        date: "2020-10-15",
+        title: "Styling and navigation",
+        body: "## Styling \n\n Picked a few colours for an initial palette. \n ## Navigation \n\n Added post list page and navigation by blog id on route."
     },
     {
-        id: '3f4e0ab2-ee9d-4f7a-b3f9-de7ec3aad7f7',
-        date: "2020-10-14",
-        title: "Sample Blog Post Three",
-        body: "This is some content for the blog post"
+        id: '3',
+        date: "2020-10-16",
+        title: "Markdown",
+        body: "Added `ngx-markdown` and `marked` to support markdown in blog post content and example component. \n\n Next step is to use the markdown rendering module in place of any other blog post rendering.\n\n Some refactoring around post rendering to have only one rendering component for posts."
     },
     {
-        id: 'a310516d-f573-4df6-a0d7-840baf248f70',
-        date: "2020-10-14",
-        title: "Sample Blog Post Four",
-        body: "This is some content for the blog post"
+        id: '4',
+        date: "2020-10-16",
+        title: "Weblog Todos",
+        body: "## TODOs \n\n Parking the weblog for the moment to move onto ngrx and a small game idea. \n\n Things to come back to: \n\n- Parse posts from individual files\n\n- Automatic index building\n\n- Tags and filters\n\n- Add  tags to post renderer"
     },
     {
-        id: 'b8e242a3-01d7-42e7-b3bf-de53222deec9',
+        id: '5',
         date: "2020-10-14",
         title: "Sample Blog Post Five",
         body: "This is some content for the blog post"

@@ -20,6 +20,6 @@ export class PostService {
   }
 
   getLatestPost(): Observable<BlogPost> {
-    return of(POSTS.find(post => post !== null));
+    return of(POSTS[POSTS.length-1]);
   }
 }

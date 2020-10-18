@@ -1,4 +1,9 @@
-<p>Post rendered content</p>
-<markdown ngPreserveWhitespaces>
-    {{content}}
-</markdown>
+<div class="post-outer">
+    <p class="ref">ID: {{post.id}}</p>
+    <h3 class>{{post.title | uppercase}}</h3>
+    <p class="ref">Originally Posted: {{post.date}}</p>
+    <markdown ngPreserveWhitespaces>
+        {{post.body}}
+    </markdown>
+</div>
+

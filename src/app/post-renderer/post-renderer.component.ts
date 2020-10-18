@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { BlogPost } from '../interfaces/blogPost';
 
 @Component({
   selector: 'app-post-renderer',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PostRendererComponent implements OnInit {
 
-  content: string = "This is *markdown* content";
+  @Input() post: BlogPost;
 
   constructor() { }
 

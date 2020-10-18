@@ -28,7 +28,7 @@
     width: 25%;
   }
   .module {
-    padding: 20px;
+    padding: 1px 20px 1px 20px;
     text-align: center;
     color: var(--colour-cloud);
     max-height: 120px;
