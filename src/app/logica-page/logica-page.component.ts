@@ -9,13 +9,12 @@ import { BLOCK_SIZE, COLS, ROWS, Symbol } from '../logica-parts/constants';
   styleUrls: ['./logica-page.component.css']
 })
 export class LogicaPageComponent implements OnInit {
-
   // Inject a reference to the canvas
   // Note is static so that we can reference it in ngOnInit (https://angular.io/api/core/ViewChild#viewchild)
   @ViewChild('board', { static: true }) 
   canvas: ElementRef<HTMLCanvasElement>;
 
-  private ctx: CanvasRenderingContext2D;
+  ctx: CanvasRenderingContext2D;
   offBits: number;
   onBits: number;
   level: number;
@@ -25,7 +24,11 @@ export class LogicaPageComponent implements OnInit {
   //private sprites: Square[] = [];
   //private intervalMillis: number = 200;
 
-  constructor() { }
+  constructor() { 
+    this.offBits = 0;
+    this.onBits = 0;
+    this.level = 1;
+  }
 
   ngOnInit() {
     this.initBoard();
@@ -43,6 +46,7 @@ export class LogicaPageComponent implements OnInit {
   play() {
     this.board = this.getEmptyBoard();
     this.gate = new And(this.ctx);
+    //console.table(this.board);
     this.gate.draw();
   }
 
