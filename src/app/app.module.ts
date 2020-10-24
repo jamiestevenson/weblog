@@ -9,7 +9,7 @@ import { BlogPostComponent } from './blog-post/blog-post.component';
 import { BlogPostsComponent } from './blog-posts/blog-posts.component';
 import { HomeComponent } from './home/home.component';
 import { PostRendererComponent } from './post-renderer/post-renderer.component';
-import { LogicaPageComponent } from './logica-page/logica-page.component';
+import { LogicaModule } from './logica/logica.module';
 
 @NgModule({
   declarations: [
@@ -17,13 +17,15 @@ import { LogicaPageComponent } from './logica-page/logica-page.component';
     BlogPostComponent,
     BlogPostsComponent,
     HomeComponent,
-    PostRendererComponent,
-    LogicaPageComponent
+    PostRendererComponent
   ],
   imports: [
+    // Angular
     BrowserModule,
+    MarkdownModule.forRoot(),
+    // Local
     AppRoutingModule,
-    MarkdownModule.forRoot()
+    LogicaModule
   ],
   providers: [],
   bootstrap: [AppComponent]

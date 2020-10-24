@@ -23,12 +23,12 @@ export const POSTS: BlogPost[] = [
         id: '4',
         date: "2020-10-16",
         title: "Weblog Todos",
-        body: "## TODOs \n\n Parking the weblog for the moment to move onto ngrx and a small game idea. \n\n Things to come back to: \n\n- Parse posts from individual files\n\n- Automatic index building\n\n- Tags and filters\n\n- Add  tags to post renderer"
+        body: "## TODOs \n\n Parking the weblog for the moment to move onto ngrx and a small game idea. \n\n Things to come back to: \n\n- Parse posts from individual files\n\n- Automatic index building\n\n- Tags and filters\n\n- Add tags to post renderer"
     },
     {
         id: '5',
-        date: "2020-10-14",
-        title: "Sample Blog Post Five",
-        body: "This is some content for the blog post"
+        date: "2020-10-22",
+        title: "Resolved HTML Canvas Issue",
+        body: "Had issue where only the last item was drawing in the rendering loop. \n\n This seems to be related to the `this.ctx.scale(BLOCK_SIZE, BLOCK_SIZE);` being called before each item. \n\n Moved out to only be called once and all items now render. \n\n ### More TODOs: \n\n - Add blog and game item things to own modules"
     }
 ];

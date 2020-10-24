@@ -1,5 +1,5 @@
-import { ISprite } from '../interfaces/iSprite';
-import { BLOCK_SIZE, COLS, ROWS, Symbol } from './constants';
+import { ISprite } from './sprite';
+import { BLOCK_SIZE, COLS, ROWS, Symbol } from '../models/constants';
 
 export class And implements ISprite {
 

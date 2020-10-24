@@ -1,7 +1,7 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { ISprite } from '../interfaces/iSprite';
-import { And } from '../logica-parts/and';
-import { BLOCK_SIZE, COLS, ROWS, Symbol } from '../logica-parts/constants';
+import { ISprite } from '../../models/sprite';
+import { And } from '../../models/and';
+import { BLOCK_SIZE, COLS, ROWS, Symbol } from '../../models/constants'
 
 @Component({
   selector: 'app-logica-page',
