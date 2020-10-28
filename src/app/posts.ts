@@ -30,5 +30,11 @@ export const POSTS: BlogPost[] = [
         date: "2020-10-22",
         title: "Resolved HTML Canvas Issue",
         body: "Had issue where only the last item was drawing in the rendering loop. \n\n This seems to be related to the `this.ctx.scale(BLOCK_SIZE, BLOCK_SIZE);` being called before each item. \n\n Moved out to only be called once and all items now render. \n\n ### More TODOs: \n\n - Add blog and game item things to own modules"
+    },
+    {
+        id: '6',
+        date: "2020-10-28",
+        title: "Shapes and Colours",
+        body: "Added round ball and proper offset for ball as it is smaller than other elements.\n\n Added helper to get CSS variables from app root element for use in canvas painting.\n\n- The logica page component needs broken out to separate components \n\n- For example, the canvas should be one container \n\n Could move on to more game-loop and collision, or adding ngrx: \n\n  - Inclined to get a level working first to inform the requirements for the store etc. \n\n- Also need to read around if ngrx is suitable for low-load game loop"
     }
 ];
