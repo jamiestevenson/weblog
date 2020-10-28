@@ -6,19 +6,22 @@ export class Ball {
     shape: Symbol[][];
     private offset = GATE_SIZE / 2;
 
-    constructor(public x: number, public y: number, private ctx: CanvasRenderingContext2D) {
+    constructor(
+      public x: number,
+      public y: number,
+      public colour: string,
+      private ctx: CanvasRenderingContext2D) {
         this.spawn();
       }
 
     spawn() {
-        this.color = "blue";
         this.shape = [
             [Symbol.HI_BALL]
         ];
     }
 
     draw() {
-        this.ctx.fillStyle = this.color;
+        this.ctx.fillStyle = this.colour;
         this.shape.forEach((row, yIndex) => {
           row.forEach((value, xIndex) => {
               if (value !== Symbol.NIL) {

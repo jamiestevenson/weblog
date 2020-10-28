@@ -3,6 +3,7 @@ import { ISprite } from '../../models/sprite';
 import { And } from '../../sprites/and';
 import { BLOCK_SIZE, COLS, ROWS, Symbol } from '../../models/constants'
 import { Ball } from '../../sprites/ball';
+import * as ColourHelper from '../../sprites/styleHelper';
 
 @Component({
   selector: 'app-logica-page',
@@ -20,7 +21,8 @@ export class LogicaPageComponent implements OnInit {
   onBits: number;
   level: number;
   board: string[][];
-  sprites: ISprite[] = [];
+  gates: ISprite[] = [];
+  balls: ISprite[] = [];
 
   //private sprites: Square[] = [];
   //private intervalMillis: number = 200;
@@ -45,14 +47,19 @@ export class LogicaPageComponent implements OnInit {
   }
 
   play() {
+    let helper = new ColourHelper.StyleHelper();
+    const sun = helper.getColor("--colour-sun");
+    const sand = helper.getColor("--colour-sand");
+    const sky = helper.getColor("--colour-sky");
+    const sea = helper.getColor("--colour-sea");
+
     this.board = this.getEmptyBoard();
     this.ctx.scale(BLOCK_SIZE, BLOCK_SIZE);
-    this.sprites.push(new And(1, 1, this.ctx));
-    this.sprites.push(new And(3, 3, this.ctx));
-    this.sprites.push(new Ball(0, 0, this.ctx));
+    this.gates.push(new And(1, 1, sea, this.ctx));
+    this.gates.push(new And(3, 3, sea, this.ctx));
+    this.balls.push(new Ball(0, 0, sun, this.ctx));
     //console.table(this.board);
-
-    this.sprites.forEach(s => s.draw());
+    [...this.gates, ...this.balls].forEach(s => s.draw());
   }
 
   getEmptyBoard(): string[][] {

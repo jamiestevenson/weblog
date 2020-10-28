@@ -1,4 +1,13 @@
 canvas {
     border-style: solid;
     border-color: var(--colour-sun);
+    float: left;
+}
+
+.right-column {
+    border-style: solid;
+    border-color: var(--colour-sun);
+    float: inline-start;
+    padding: 10px;
+    margin-left: 5px;
 }

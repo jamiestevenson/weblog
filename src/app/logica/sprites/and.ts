@@ -9,19 +9,22 @@ export class And implements ISprite {
   color: string;
   shape: Symbol[][];
 
-  constructor(public x: number, public y: number, private ctx: CanvasRenderingContext2D) {
+  constructor(
+    public x: number,
+    public y: number,
+    public colour: string,
+    private ctx: CanvasRenderingContext2D) {
     this.spawn();
   }
 
   spawn() {
-    this.color = "green";
     this.shape = [
       [Symbol.AND_L, Symbol.AND_R]
     ];
   }
 
   draw() {
-    this.ctx.fillStyle = this.color;
+    this.ctx.fillStyle = this.colour;
     this.shape.forEach((row, yIndex) => {
       row.forEach((value, xIndex) => {
           if (value !== Symbol.NIL) {
