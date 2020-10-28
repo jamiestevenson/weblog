@@ -1,7 +1,8 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { ISprite } from '../../models/sprite';
-import { And } from '../../models/and';
+import { And } from '../../sprites/and';
 import { BLOCK_SIZE, COLS, ROWS, Symbol } from '../../models/constants'
+import { Ball } from '../../sprites/ball';
 
 @Component({
   selector: 'app-logica-page',
@@ -19,7 +20,7 @@ export class LogicaPageComponent implements OnInit {
   onBits: number;
   level: number;
   board: string[][];
-  gate: ISprite;
+  sprites: ISprite[] = [];
 
   //private sprites: Square[] = [];
   //private intervalMillis: number = 200;
@@ -45,9 +46,13 @@ export class LogicaPageComponent implements OnInit {
 
   play() {
     this.board = this.getEmptyBoard();
-    this.gate = new And(this.ctx);
+    this.ctx.scale(BLOCK_SIZE, BLOCK_SIZE);
+    this.sprites.push(new And(1, 1, this.ctx));
+    this.sprites.push(new And(3, 3, this.ctx));
+    this.sprites.push(new Ball(0, 0, this.ctx));
     //console.table(this.board);
-    this.gate.draw();
+
+    this.sprites.forEach(s => s.draw());
   }
 
   getEmptyBoard(): string[][] {

@@ -1,37 +1,27 @@
-import { ISprite } from './sprite';
-import { BLOCK_SIZE, COLS, ROWS, Symbol } from '../models/constants';
+import { ISprite } from '../models/sprite';
+import { BLOCK_SIZE, COLS, GATE_SIZE, ROWS, Symbol } from '../models/constants';
 
 export class And implements ISprite {
 
-  private WIDTH: number = 1;
-  private HEIGHT: number = 1;
+  private WIDTH: number = GATE_SIZE;
+  private HEIGHT: number = GATE_SIZE;
 
-  x: number;
-  y: number;
   color: string;
   shape: Symbol[][];
 
-  constructor(private ctx: CanvasRenderingContext2D) {
+  constructor(public x: number, public y: number, private ctx: CanvasRenderingContext2D) {
     this.spawn();
   }
 
   spawn() {
-    this.color = "blue";
+    this.color = "green";
     this.shape = [
-      [Symbol.AND_L, Symbol.AND_R, Symbol.NIL],
-      [Symbol.NIL, Symbol.NIL, Symbol.NIL],
-      [Symbol.NIL, Symbol.NIL, Symbol.NIL]
+      [Symbol.AND_L, Symbol.AND_R]
     ];
-
-    // Position where the shape spawns.
-    this.x = 1;
-    this.y = 1;
   }
 
   draw() {
     this.ctx.fillStyle = this.color;
-    this.ctx.scale(BLOCK_SIZE, BLOCK_SIZE);
-
     this.shape.forEach((row, yIndex) => {
       row.forEach((value, xIndex) => {
           if (value !== Symbol.NIL) {
