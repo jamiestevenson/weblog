@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { BlogPost } from '../interfaces/blogPost';
+import { BlogPost } from './../../interfaces';
 
 @Component({
   selector: 'app-post-renderer',

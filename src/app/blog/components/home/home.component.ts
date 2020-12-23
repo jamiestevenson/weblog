@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { BlogPost } from '../interfaces/blogPost';
-import { PostService } from '../post.service';
+import { BlogPost } from '../../interfaces';
+import { PostService } from '../../services/post.service';
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './home.component.html',
-  styleUrls: [ './home.component.css', '../app.component.css' ]
+  styleUrls: [ './home.component.css', '../../../app.component.css' ]
 })
 export class HomeComponent implements OnInit {
   posts: BlogPost[] = [];

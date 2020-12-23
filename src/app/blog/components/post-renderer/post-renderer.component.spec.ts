@@ -16,6 +16,12 @@ describe('PostRendererComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(PostRendererComponent);
     component = fixture.componentInstance;
+    component.post = {
+      id: 'id-content',
+      date: 'date content',
+      title: 'title content',
+      body: 'body content',
+    };
     fixture.detectChanges();
   });
 

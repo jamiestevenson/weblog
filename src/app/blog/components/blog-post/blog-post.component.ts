@@ -2,13 +2,13 @@ import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 
-import { BlogPost } from '../interfaces/blogPost';
-import { PostService } from '../post.service';
+import { BlogPost } from '../../interfaces/';
+import { PostService } from '../../services/post.service';
 
 @Component({
   selector: 'app-blog-post',
   templateUrl: './blog-post.component.html',
-  styleUrls: ['./blog-post.component.css', '../app.component.css']
+  styleUrls: ['./blog-post.component.css', '../../../app.component.css']
 })
 export class BlogPostComponent implements OnInit {
 

@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { BlogPost } from '../interfaces/blogPost';
-import { PostService } from '../post.service';
+import { BlogPost } from '../../interfaces';
+import { PostService } from '../../services/post.service';
 
 @Component({
   selector: 'app-blog-posts',
   templateUrl: './blog-posts.component.html',
-  styleUrls: ['./blog-posts.component.css', '../app.component.css']
+  styleUrls: ['./blog-posts.component.css', '../../../app.component.css']
 })
 export class BlogPostsComponent implements OnInit {
 

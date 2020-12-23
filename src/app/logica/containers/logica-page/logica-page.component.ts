@@ -3,7 +3,7 @@ import { ISprite } from '../../models/sprite';
 import { And } from '../../sprites/and';
 import { BLOCK_SIZE, COLS, ROWS, Symbol } from '../../models/constants'
 import { Ball } from '../../sprites/ball';
-import * as ColourHelper from '../../sprites/styleHelper';
+import * as ColourHelper from '../../util/style.util';
 
 @Component({
   selector: 'app-logica-page',
