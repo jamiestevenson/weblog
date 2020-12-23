@@ -1,35 +1,36 @@
-import { ISprite } from '../models/sprite';
-import { BLOCK_SIZE, COLS, GATE_SIZE, ROWS, Symbol } from '../models/constants';
+import { StyleService } from 'src/app/common/services/style.service';
+import { Sprite, Tile } from '../interfaces';
+import { BLOCK_SIZE, COLS, GATE_SIZE, ROWS } from '../util/constants';
+import { LogicaBoard } from '../interfaces/board.interface';
 
-export class And implements ISprite {
+export class And implements Sprite {
 
-  private WIDTH: number = GATE_SIZE;
-  private HEIGHT: number = GATE_SIZE;
 
-  color: string;
-  shape: Symbol[][];
+  private static shape: Tile[][] = [
+    [Tile.AND_L, Tile.AND_R]
+  ];
+  private static width: number = GATE_SIZE;
+  private static height: number = GATE_SIZE;
+  private static colour = '--colour-sea';
 
-  constructor(
-    public x: number,
-    public y: number,
-    public colour: string,
-    private ctx: CanvasRenderingContext2D) {
-    this.spawn();
-  }
-
-  spawn() {
-    this.shape = [
-      [Symbol.AND_L, Symbol.AND_R]
-    ];
-  }
-
-  draw() {
-    this.ctx.fillStyle = this.colour;
-    this.shape.forEach((row, yIndex) => {
+  static place = (board: LogicaBoard, loc: { x: number; y: number; }) => {
+    And.shape.forEach((row, yIndex) => {
       row.forEach((value, xIndex) => {
-          if (value !== Symbol.NIL) {
-            this.ctx.fillRect(this.x + xIndex, this.y + yIndex, this.WIDTH, this.HEIGHT);
-            console.log(`drawing rectangle: ${this.x}+${xIndex} ${this.y}+${yIndex}`);
+          if (value !== Tile.NIL) {
+            board.tiles[loc.x + xIndex][loc.y + yIndex] = value;
+            console.log(`placing ball: ${loc.x}+${xIndex} ${loc.y}+${yIndex}`);
+          }
+      });
+    });
+  }
+
+  static draw = (x: number, y: number, ctx: CanvasRenderingContext2D, styles: StyleService) => {
+    ctx.fillStyle = styles.getColour(And.colour);
+    And.shape.forEach((row, yIndex) => {
+      row.forEach((value, xIndex) => {
+          if (value !== Tile.NIL) {
+            ctx.fillRect(x + xIndex, y + yIndex, And.width, And.height);
+            console.log(`drawing rectangle: ${x}+${xIndex} ${y}+${yIndex}`);
           }
       });
     });
