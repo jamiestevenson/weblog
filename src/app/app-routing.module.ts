@@ -1,10 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { HomeComponent } from './home/home.component';
-import { BlogPostsComponent } from './blog-posts/blog-posts.component';
-import { BlogPostComponent } from './blog-post/blog-post.component';
-import { LogicaPageComponent } from './logica/containers/logica-page/logica-page.component';
+import { BlogPostComponent, BlogPostsComponent, HomeComponent } from './blog/components';
+import { LogicaPageComponent } from './logica/containers';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },

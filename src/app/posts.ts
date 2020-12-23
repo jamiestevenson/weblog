@@ -36,5 +36,11 @@ export const POSTS: BlogPost[] = [
         date: "2020-10-28",
         title: "Shapes and Colours",
         body: "Added round ball and proper offset for ball as it is smaller than other elements.\n\n Added helper to get CSS variables from app root element for use in canvas painting.\n\n- The logica page component needs broken out to separate components \n\n- For example, the canvas should be one container \n\n Could move on to more game-loop and collision, or adding ngrx: \n\n  - Inclined to get a level working first to inform the requirements for the store etc. \n\n- Also need to read around if ngrx is suitable for low-load game loop"
+    },
+    {
+        id: '7',
+        date: "2020-12-23",
+        title: "Modularise and Test",
+        body: "coming back after other Angular work - tidied things into modules, added indexes, updated Karma tests to work"
     }
 ];

@@ -14,5 +14,4 @@ export class PostRendererComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
 }

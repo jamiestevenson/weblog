@@ -1,0 +1,1 @@
+export * from './logica-page/logica-page.component';
