@@ -46,7 +46,7 @@ export class LogicaPageComponent implements OnInit {
     this.ctx.canvas.height = ROWS * BLOCK_SIZE;
   }
 
-  play() {
+  handleStartLevelClick(): void {
     let helper = new ColourHelper.StyleHelper();
     const sun = helper.getColor("--colour-sun");
     const sand = helper.getColor("--colour-sand");
@@ -60,6 +60,11 @@ export class LogicaPageComponent implements OnInit {
     this.balls.push(new Ball(0, 0, sun, this.ctx));
     //console.table(this.board);
     [...this.gates, ...this.balls].forEach(s => s.draw());
+  }
+
+  handleRunClick(isRunning: boolean): void {
+    // emit events to simulation handler here
+    console.log(`Got signal to set isRunning to: ${isRunning}`);
   }
 
   getEmptyBoard(): string[][] {
