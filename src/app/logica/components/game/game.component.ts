@@ -53,7 +53,7 @@ export class GameComponent implements OnInit {
     // Do things if necessary, but events should handle most of this async
 
     if (!this.board){
-      console.log(`Cannot draw undefined board`);
+      // console.log(`Cannot draw undefined board`);
       return;
     }
 
@@ -61,7 +61,7 @@ export class GameComponent implements OnInit {
 
     this.board.tiles.forEach((row, yIndex) => {
       row.forEach((cell, xIndex) => {
-        console.log(`Drawing: ${cell} ${xIndex} ${yIndex}`);
+        // console.log(`Drawing: ${cell} ${xIndex} ${yIndex}`);
         this.drawCell(cell, xIndex, yIndex, this.ctx, this.styles);
       });
     });

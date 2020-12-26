@@ -16,7 +16,7 @@ export class And {
     And.shape.forEach((row, yIndex) => {
       row.forEach((value, xIndex) => {
           if (value !== Tile.NIL) {
-            board.tiles[loc.x + xIndex][loc.y + yIndex] = value;
+            board.tiles[loc.y + yIndex][loc.x + xIndex] = value;
             console.log(`placing AND: ${loc.x}+${xIndex} ${loc.y}+${yIndex}`);
           }
       });
@@ -25,14 +25,9 @@ export class And {
 
   static draw = (x: number, y: number, ctx: CanvasRenderingContext2D, styles: StyleService) => {
     ctx.fillStyle = styles.getColour(And.colour);
-    And.shape.forEach((row, yIndex) => {
-      row.forEach((value, xIndex) => {
-          if (value !== Tile.NIL) {
-            ctx.fillRect(x + xIndex, y + yIndex, And.width, And.height);
-            console.log(`drawing rectangle: ${x}+${xIndex} ${y}+${yIndex}`);
-          }
-      });
-    });
+    ctx.fillRect(x, y, And.width, And.height);
+    console.log(`drawing rectangle: ${x} ${y}`);
+  }
 
     // this.ctx.scale(BLOCK_SIZE, BLOCK_SIZE);
     // this.ctx.fillRect(0, 0, this.WIDTH, this.HEIGHT);
@@ -50,5 +45,4 @@ export class And {
     //     }
     //   }
     // }
-  }
 }
