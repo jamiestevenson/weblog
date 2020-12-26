@@ -6,11 +6,6 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class StyleService {
 
-    public static sun = ('--colour-sun');
-    public static sand = ('--colour-sand');
-    public static sky = ('--colour-sky');
-    public static sea = ('--colour-sea');
-
     private classColors: {[key: string]: string} = {};
 
     constructor() {

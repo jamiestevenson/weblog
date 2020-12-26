@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { LogicaBoard } from '../../interfaces/board.interface';
+import { LogicaBoard } from '../../types/board.interface';
 import { LogicaFacade } from '../../store/facade/facade';
 
 @Component({

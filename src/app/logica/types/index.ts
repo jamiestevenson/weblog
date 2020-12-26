@@ -4,3 +4,4 @@ export * from './tokens.interfaces';
 export * from './sidebar.interfaces';
 export * from './sprite.interface';
 export * from './tile.enum';
+export * from './bit.type';

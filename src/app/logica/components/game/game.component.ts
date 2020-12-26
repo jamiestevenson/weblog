@@ -1,10 +1,11 @@
 import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import { StyleService } from 'src/app/core/services/style.service';
-import { LogicaBoard, Tile, Tokens } from '../../interfaces';
+import { LogicaBoard, Tile, Tokens } from '../../types';
 import { And, Ball } from '../../sprites';
 import { BLOCK_SIZE, COLS, ROWS } from '../../util/constants';
-import { SideBar } from '../../interfaces/sidebar.interfaces';
+import { SideBar } from '../../types/sidebar.interfaces';
 import { LogicaFacade } from '../../store/facade/facade';
+import { bitBall } from '../../types/bit.type';
 
 @Component({
   selector: 'app-game',
@@ -42,6 +43,7 @@ export class GameComponent implements OnInit {
     // Calculate size of canvas from constants.
     this.ctx.canvas.width = COLS * BLOCK_SIZE;
     this.ctx.canvas.height = ROWS * BLOCK_SIZE;
+    this.ctx.scale(BLOCK_SIZE, BLOCK_SIZE);
   }
 
   handleLoadLevelClick(): void {
@@ -57,12 +59,19 @@ export class GameComponent implements OnInit {
       return;
     }
 
-    this.ctx.scale(BLOCK_SIZE, BLOCK_SIZE);
-
     this.board.tiles.forEach((row, yIndex) => {
-      row.forEach((cell, xIndex) => {
+      row.forEach((cell: Tile, xIndex) => {
         // console.log(`Drawing: ${cell} ${xIndex} ${yIndex}`);
         this.drawCell(cell, xIndex, yIndex, this.ctx, this.styles);
+      });
+    });
+
+    this.board.bits.forEach((row, yIndex) => {
+      row.forEach((b: bitBall | undefined, xIndex: number) => {
+        // console.log(`Drawing: ${cell} ${xIndex} ${yIndex}`);
+        if (b === 0 || b === 1) {
+          this.drawBit(b, xIndex, yIndex, this.ctx, this.styles);
+        }
       });
     });
   }
@@ -73,19 +82,20 @@ export class GameComponent implements OnInit {
     console.log(`Got signal to set isRunning to: ${isRunning}`);
   }
 
+  // There is probably a nice way to reduce this
   private drawCell = (cell: Tile, x: number, y: number, ctx: CanvasRenderingContext2D, styles: StyleService): void => {
     switch (cell) {
       case Tile.AND_L:
       case Tile.AND_R:
         And.draw(x, y, ctx, styles);
         break;
-      case Tile.HI_BALL:
-      case Tile.LO_BALL:
-        Ball.draw(x, y, ctx, styles);
-        break;
       case Tile.NIL:
-        // Not currently drawn
+        // Background not currently drawn
         break;
     }
+  }
+
+  private drawBit = (b: bitBall, x: number, y: number, ctx: CanvasRenderingContext2D, styles: StyleService) => {
+    Ball.draw(b, x, y, ctx, styles);
   }
 }

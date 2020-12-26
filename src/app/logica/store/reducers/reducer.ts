@@ -1,8 +1,8 @@
 import { createReducer, on } from '@ngrx/store';
-import { LogicaBoard } from '../../interfaces';
+import { LogicaBoard } from '../../types';
 import * as LogicaActions from '../actions';
 import { levelOneBoard } from '../../util/board.util';
-import { Tokens } from '../../interfaces/tokens.interfaces';
+import { Tokens } from '../../types/tokens.interfaces';
 
 export interface LogicaState {
     level: {
@@ -25,7 +25,8 @@ export const initialState: LogicaState = {
         onBits: 0
     },
     board: {
-        tiles: []
+        tiles: [],
+        bits: []
     }
 };
 

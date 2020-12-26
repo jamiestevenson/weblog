@@ -1,7 +1,7 @@
 import { createSelector } from '@ngrx/store';
 import { LogicaState } from '../reducers/reducer';
 import * as FromFeature from '../reducers/index';
-import { LogicaBoard, SideBar, Tokens } from '../../interfaces';
+import { LogicaBoard, SideBar, Tokens } from '../../types';
 import { getLogicaState } from '../reducers/index';
 
 export const getBoard = (state: LogicaState) => state.board;
@@ -23,7 +23,6 @@ export const selectStats = createSelector(
 export const selectBoard = createSelector(
   getLogicaWrapperProperty,
     (state: LogicaState): LogicaBoard => {
-      console.log(`selecting board! ${JSON.stringify(state.board)}`);
       return state.board;
     }
 );
