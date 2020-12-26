@@ -1,14 +1,17 @@
 import { createReducer, on } from '@ngrx/store';
 import { LogicaBoard } from '../../interfaces';
 import * as LogicaActions from '../actions';
+import { levelOneBoard } from '../../util/board.util';
+import { Tokens } from '../../interfaces/tokens.interfaces';
 
-interface LogicaState {
+export interface LogicaState {
     level: {
-        id: string,
-        name: string
-    },
-    score: number
-    board: LogicaBoard
+        id: string;
+        name: string;
+    };
+    score: number;
+    tokens: Tokens;
+    board: LogicaBoard;
 }
 
 export const initialState: LogicaState = {
@@ -17,21 +20,24 @@ export const initialState: LogicaState = {
         name: 'no level loaded'
     },
     score: 0,
-    board: []
+    tokens: {
+        offBits: 0,
+        onBits: 0
+    },
+    board: {
+        tiles: []
+    }
 };
- 
-const _counterReducer = createReducer(
+
+export const logicaReducer = createReducer(
   initialState,
-  on(LogicaActions.loadLevel, (state, levelIdToLoad) => {
-      // This just loads level one at this time
+  on(LogicaActions.loadLevelSuccess, (state, {loadThis: data}) => {
       return {
         ...state,
-        level: {
-            id: '1',
-            name: 'Level One'
-        },
-        score: 0,
-        board: levelOneBoard()
-      }
+        board: data
+      };
+  }),
+  on(LogicaActions.loadLevelFail, (state) => {
+    return state;
   }),
 );

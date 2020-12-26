@@ -1,16 +1,6 @@
 <h1>Logica Game</h1>
 <p>Bits are conserved</p>
-<!-- Canvas element with reference variable (https://angular.io/guide/template-reference-variables) -->
-
-<div class="grid">
-    <canvas #board class="game-board"></canvas>
-    <div class="right-column">
-      <app-controls
-      [onBits]="onBits"
-      [offBits]="offBits"
-      [level]="level"
-      (loadClick)="handleStartLevelClick()"
-      (runClick)="handleRunClick($event)">
-      </app-controls>
-    </div>
-  </div>
+<app-game
+[board]="(logicaFacade.selectBoard$ | async) || undefined"
+[tokens]="(logicaFacade.selectTokens$ | async) || undefined"
+></app-game>

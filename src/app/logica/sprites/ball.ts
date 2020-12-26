@@ -1,4 +1,4 @@
-import { StyleService } from 'src/app/common/services/style.service';
+import { StyleService } from 'src/app/core/services/style.service';
 import { BALL_SIZE, BLOCK_SIZE, GATE_SIZE } from '../util/constants';
 import { LogicaBoard, Tile } from './../interfaces';
 
@@ -16,7 +16,7 @@ export class Ball {
         row.forEach((value, xIndex) => {
             if (value !== Tile.NIL) {
               board.tiles[loc.x + xIndex][loc.y + yIndex] = value;
-              console.log(`placing ball: ${loc.x}+${xIndex} ${loc.y}+${yIndex}`);
+              console.log(`placing BALL: ${loc.x}+${xIndex} ${loc.y}+${yIndex}`);
             }
         });
       });

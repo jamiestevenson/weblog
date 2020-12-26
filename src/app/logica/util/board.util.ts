@@ -2,7 +2,7 @@ import { LogicaBoard, Tile } from '../interfaces';
 import { And, Ball } from '../sprites';
 import { COLS, ROWS } from './constants';
 
-const levelOneBoard = (): LogicaBoard => {
+export const levelOneBoard = (): LogicaBoard => {
     const board = emptyBoard();
     Ball.place(board, {x: 0, y: 0});
     And.place(board, {x: 1, y: 1});

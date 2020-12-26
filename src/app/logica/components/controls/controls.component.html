@@ -1,8 +1,8 @@
 <div>
     <h2>Controls</h2>
-    <p>Off Bits: {{ offBits }}</p>
-    <p>On Bits: {{ onBits }}</p>
-    <p>Level: {{ level }}</p>
+    <p>Off Bits: {{ lowBits ? lowBits : '-' }}</p>
+    <p>On Bits: {{ highBits ? highBits : '-' }}</p>
+    <p>Level: {{ level ? level : '-' }}</p>
 </div>
 <button (click)="handleLoadClick()" class="load-button">Load</button>
-<button (click)="handleRunClick()" class="run-button">Run</button>
+<button (click)="handleRunClick()" class="run-button">{{isRunning ? 'Pause' : 'Run'}}</button>

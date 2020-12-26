@@ -1,7 +1,8 @@
 import { createAction, props } from '@ngrx/store';
+import { LogicaBoard } from '../../interfaces/board.interface';
 
 export const loadLevel = createAction('[Logica] Load Level Start', props<{ levelIdToLoad: string }>());
-export const loadLevelSuccess = createAction('[Logica] Load Level Success');
+export const loadLevelSuccess = createAction('[Logica] Load Level Success', props<{ loadThis: LogicaBoard }>());
 export const loadLevelFail = createAction('[Logica] Load Level Fail', props<{ error: string }>());
 
 export const unpauseSimulation = createAction('[Logica] Start Simulation');

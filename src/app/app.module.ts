@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { StoreDevtoolsModule,  } from '@ngrx/store-devtools';
+import { StoreModule } from '@ngrx/store';
 
 import { MarkdownModule } from 'ngx-markdown';
 
@@ -8,7 +9,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LogicaModule } from './logica/logica.module';
 import { BlogPostComponent, BlogPostsComponent, HomeComponent, PostRendererComponent } from './blog/components';
-import { CoreModule } from './core/core.module';
+import { EffectsModule } from '@ngrx/effects';
+import { StyleService } from './core/services/style.service';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,8 @@ import { CoreModule } from './core/core.module';
     BrowserModule,
     MarkdownModule.forRoot(),
     // Store
-    CoreModule.forRoot(),
+    StoreModule.forRoot({}),
+    EffectsModule.forRoot([]),
     // Instrumentation (must be after store module declaration)
     StoreDevtoolsModule.instrument({
       maxAge: 10
@@ -32,7 +35,7 @@ import { CoreModule } from './core/core.module';
     AppRoutingModule,
     LogicaModule
   ],
-  providers: [],
+  providers: [StyleService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

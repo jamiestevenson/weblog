@@ -8,13 +8,13 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 export class ControlsComponent {
 
   @Input()
-  offBits: number;
+  lowBits?: number;
   @Input()
-  onBits: number;
+  highBits?: number;
   @Input()
-  level: number;
+  level?: number;
 
-  isRunning: boolean = false;
+  isRunning = false;
 
   @Output()
   loadClick: EventEmitter<void> = new EventEmitter<void>();
@@ -24,17 +24,17 @@ export class ControlsComponent {
   constructor() { }
 
 
-  handleLoadClick() : void {
+  handleLoadClick(): void {
     this.loadClick.emit();
   }
 
-  handleRunClick() : void {
+  handleRunClick(): void {
     this.isRunning = !this.isRunning;
     this.runClick.emit(this.isRunning);
   }
 
   get runningLabel(): string {
-    return (this.isRunning) ? "Pause" : "Continue";
+    return (this.isRunning) ? 'Pause' : 'Continue';
   }
 
 }

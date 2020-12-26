@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { LogicaPageComponent } from './logica-page.component';
+import { LogicaFacade } from '../../store/facade/facade';
 
 describe('LogicaPageComponent', () => {
   let component: LogicaPageComponent;
@@ -8,7 +9,13 @@ describe('LogicaPageComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ LogicaPageComponent ]
+      declarations: [ LogicaPageComponent ],
+      providers: [
+        {
+          provide: LogicaFacade,
+          useValue: {}
+        }
+      ]
     })
     .compileComponents();
   });

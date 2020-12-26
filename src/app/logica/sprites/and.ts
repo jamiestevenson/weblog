@@ -1,10 +1,9 @@
-import { StyleService } from 'src/app/common/services/style.service';
 import { Sprite, Tile } from '../interfaces';
-import { BLOCK_SIZE, COLS, GATE_SIZE, ROWS } from '../util/constants';
+import { GATE_SIZE } from '../util/constants';
 import { LogicaBoard } from '../interfaces/board.interface';
+import { StyleService } from 'src/app/core/services/style.service';
 
-export class And implements Sprite {
-
+export class And {
 
   private static shape: Tile[][] = [
     [Tile.AND_L, Tile.AND_R]
@@ -18,7 +17,7 @@ export class And implements Sprite {
       row.forEach((value, xIndex) => {
           if (value !== Tile.NIL) {
             board.tiles[loc.x + xIndex][loc.y + yIndex] = value;
-            console.log(`placing ball: ${loc.x}+${xIndex} ${loc.y}+${yIndex}`);
+            console.log(`placing AND: ${loc.x}+${xIndex} ${loc.y}+${yIndex}`);
           }
       });
     });

@@ -6,23 +6,29 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from '../app-routing.module';
 import { ControlsComponent } from './components/controls/controls.component';
 import { StoreModule } from '@ngrx/store';
+import { logicaFeatureKey, reducers } from './store/reducers';
+import { effects } from './store/effects';
+import { GameComponent } from './components/game/game.component';
+import { LogicaFacade } from './store/facade/facade';
 
 
 
 @NgModule({
   declarations: [
     LogicaPageComponent,
-    ControlsComponent
+    ControlsComponent,
+    GameComponent
   ],
   imports: [
     StoreModule.forFeature(logicaFeatureKey, reducers),
-    EffectsModule.forFeature(effects)
+    EffectsModule.forFeature(effects),
     BrowserModule,
     CommonModule,
     AppRoutingModule
   ],
   exports: [
     LogicaPageComponent
-  ]
+  ],
+  providers: [LogicaFacade]
 })
 export class LogicaModule { }
