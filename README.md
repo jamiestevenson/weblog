@@ -4,7 +4,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Run `ng serve` (via `npm start`) for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ## Code scaffolding
 
@@ -43,7 +43,14 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 https://daviddalbusco.medium.com/add-a-blog-to-your-angular-website-using-markdown-files-31cdb0627bdd
 https://github.com/jfcere/ngx-markdown
 
-### marked
+### markdown
 
 A dependency for ngx-markdown
 https://github.com/markedjs/marked
+
+## ng update
+
+To run `ng update` use `npm run ng update`
+
+You will probably need to use `Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Scope CurrentUser` in powershell to run this update then
+`Set-ExecutionPolicy -ExecutionPolicy Restricted -Scope CurrentUser` to restore the default setting.
