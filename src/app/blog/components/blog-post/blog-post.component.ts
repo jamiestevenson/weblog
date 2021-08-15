@@ -26,7 +26,7 @@ export class BlogPostComponent implements OnInit {
   
   getPost(): void {
     const id = this.route.snapshot.paramMap.get('id');
-    console.log("trying to get post: " + id);
+    console.log('trying to get post: ' + id);
     this.postService.getPost(id)
       .subscribe(p => this.post = p);
   }

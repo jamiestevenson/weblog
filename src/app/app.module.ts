@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { StoreDevtoolsModule,  } from '@ngrx/store-devtools';
 import { StoreModule } from '@ngrx/store';
 
-import { MarkdownModule } from 'ngx-markdown';
+import { MarkdownModule, MarkedOptions } from 'ngx-markdown';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';

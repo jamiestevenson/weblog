@@ -5,9 +5,7 @@
         <p class="ref">ID: {{post.id}}</p>
         <h3 class>{{post.title | uppercase}}</h3>
         <p class="ref">Originally Posted: {{post.date}}</p>
-        <markdown ngPreserveWhitespaces>
-            {{post.body}}
-        </markdown>
+        <markdown ngPreserveWhitespaces [data]="post.body"></markdown>
     </div>
 </ng-template>
 
@@ -16,7 +14,7 @@
         <p class="ref">ID: -</p>
         <h3 class>          </h3>
         <p class="ref">Originally Posted: -</p>
-        <markdown ngPreserveWhitespaces>
+        <markdown ngPreserveWhitespaces >
             No previous posts
         </markdown>
     </div>
