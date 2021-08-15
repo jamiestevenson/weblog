@@ -41,10 +41,10 @@ export const POSTS: BlogPost[] = [
         id: '7',
         date: "2020-12-23",
         title: "Modularise and Test",
-        body: "coming back after other Angular work - tidied things into modules, added indexes, updated Karma tests to work"
+        body: "Coming back after other Angular work - tidied things into modules, added indexes, updated Karma tests to work"
     },
     {
-        id: '7',
+        id: '8',
         date: "2020-12-26",
         title: "Move rendering to NGRX & Effects",
         body: "Level state decoupled from rendering. Level and score data now live in redux. Rendering is separated in canvas component. \n\n- Rendering of individual tiles is delegated to separate pseudo-classes (sort of Strategy) \n\n- Separate balls into different rendering and state 'layer' \n\n- Added representation for hi and low bits"

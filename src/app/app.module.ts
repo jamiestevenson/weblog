@@ -8,22 +8,22 @@ import { MarkdownModule } from 'ngx-markdown';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LogicaModule } from './logica/logica.module';
-import { BlogPostComponent, BlogPostsComponent, HomeComponent, PostRendererComponent } from './blog/components';
 import { EffectsModule } from '@ngrx/effects';
 import { StyleService } from './core/services/style.service';
+import { BlogModule } from './blog/blog.module';
+import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    BlogPostComponent,
-    BlogPostsComponent,
-    HomeComponent,
-    PostRendererComponent
+    AppComponent
   ],
   imports: [
     // Angular
     BrowserModule,
+    RouterModule,
     MarkdownModule.forRoot(),
+    HttpClientModule,
     // Store
     StoreModule.forRoot({}),
     EffectsModule.forRoot([]),
@@ -33,6 +33,7 @@ import { StyleService } from './core/services/style.service';
     }),
     // Local
     AppRoutingModule,
+    BlogModule,
     LogicaModule
   ],
   providers: [StyleService],

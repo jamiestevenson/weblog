@@ -12,7 +12,7 @@ export class ControlsComponent {
   @Input()
   highBits?: number;
   @Input()
-  level?: number;
+  level?: string;
 
   isRunning = false;
 

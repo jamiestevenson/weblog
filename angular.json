@@ -56,6 +56,30 @@
                   "maximumError": "10kb"
                 }
               ]
+            },
+            "development": {
+              "fileReplacements": [
+              ],
+              "optimization": false,
+              "outputHashing": "all",
+              "sourceMap": true,
+              "extractCss": false,
+              "namedChunks": true,
+              "extractLicenses": false,
+              "vendorChunk": false,
+              "buildOptimizer": false,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
             }
           }
         },
@@ -67,6 +91,9 @@
           "configurations": {
             "production": {
               "browserTarget": "angular-weblog:build:production"
+            },
+            "development": {
+              "browserTarget": "angular-weblog:build:development"
             }
           }
         },
@@ -119,6 +146,6 @@
           }
         }
       }
-    }},
-  "defaultProject": "angular-weblog"
+    }
+  }
 }

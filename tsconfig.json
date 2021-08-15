@@ -7,6 +7,7 @@
     "sourceMap": true,
     "declaration": false,
     "downlevelIteration": true,
+    "strictFunctionTypes": true,
     "experimentalDecorators": true,
     "moduleResolution": "node",
     "importHelpers": true,
@@ -15,6 +16,15 @@
     "lib": [
       "es2018",
       "dom"
+    ],
+    "types": [
+      "node"
+    ],
+    "typeRoots": [
+      "./node_modules/@types"
     ]
+  },
+  "angularCompilerOptions": {
+    "strictTemplates": true
   }
 }

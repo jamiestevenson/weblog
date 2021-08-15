@@ -1,9 +1,23 @@
-<div class="post-outer">
-    <p class="ref">ID: {{post.id}}</p>
-    <h3 class>{{post.title | uppercase}}</h3>
-    <p class="ref">Originally Posted: {{post.date}}</p>
-    <markdown ngPreserveWhitespaces>
-        {{post.body}}
-    </markdown>
-</div>
+<div *ngIf="post; then thenBlock else elseBlock"></div>
 
+<ng-template #thenBlock>
+    <div class="post-outer">
+        <p class="ref">ID: {{post.id}}</p>
+        <h3 class>{{post.title | uppercase}}</h3>
+        <p class="ref">Originally Posted: {{post.date}}</p>
+        <markdown ngPreserveWhitespaces>
+            {{post.body}}
+        </markdown>
+    </div>
+</ng-template>
+
+<ng-template #elseBlock>
+    <div class="post-outer">
+        <p class="ref">ID: -</p>
+        <h3 class>          </h3>
+        <p class="ref">Originally Posted: -</p>
+        <markdown ngPreserveWhitespaces>
+            No previous posts
+        </markdown>
+    </div>
+</ng-template>
