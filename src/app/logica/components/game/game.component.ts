@@ -1,4 +1,4 @@
-import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, Input, OnChanges, OnInit, SimpleChanges, ViewChild } from '@angular/core';
 import { StyleService } from 'src/app/core/services/style.service';
 import { LogicaBoard, Tile, Tokens } from '../../types';
 import { And, Ball } from '../../sprites';
@@ -12,7 +12,7 @@ import { bitBall } from '../../types/bit.type';
   templateUrl: './game.component.html',
   styleUrls: ['./game.component.css']
 })
-export class GameComponent implements OnInit {
+export class GameComponent implements OnInit, OnChanges {
   // Inject a reference to the canvas
   // Note, it is static so that we can reference it in ngOnInit (https://angular.io/api/core/ViewChild#viewchild)
   @ViewChild('board', { static: true })
@@ -36,6 +36,12 @@ export class GameComponent implements OnInit {
     this.initBoard();
   }
 
+  ngOnChanges(changes: SimpleChanges): void {
+    if (typeof this.board !== 'undefined' && typeof this.ctx !== 'undefined') {
+      this.draw();
+    }
+  }
+
   initBoard(): void {
     // Get the 2D context that we draw on.
     this.ctx = this.canvas.nativeElement.getContext('2d');
@@ -51,14 +57,19 @@ export class GameComponent implements OnInit {
     return;
   }
 
+  handleTickClick(): void {
+    this.logicaFacade.tick();
+    return;
+  }
+
   draw(): void {
     // Do things if necessary, but events should handle most of this async
-
     if (!this.board){
       // console.log(`Cannot draw undefined board`);
       return;
     }
 
+    this.ctx.clearRect(0, 0, this.ctx.canvas.width, this.ctx.canvas.height);
     this.board.tiles.forEach((row, yIndex) => {
       row.forEach((cell: Tile, xIndex) => {
         // console.log(`Drawing: ${cell} ${xIndex} ${yIndex}`);

@@ -16,4 +16,7 @@ export class LogicaFacade {
     this.store.dispatch(LogicaActions.loadLevel({ levelIdToLoad: '1' }));
   }
 
+  tick(): void {
+    this.store.dispatch(LogicaActions.tickSimulation());
+  }
 }

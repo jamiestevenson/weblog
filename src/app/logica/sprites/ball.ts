@@ -12,12 +12,16 @@ export class Ball {
   private static colour = Colour.SUN;
 
   static place = (board: LogicaBoard, loc: { x: number; y: number; }, bit: bitBall) => {
-    board.bits[loc.x][loc.y] = bit;
-    console.log(`placing ${toLabel(bit)} BALL: ${loc.x} ${loc.y}`);
+    if( loc.y < board.bits.length && loc.x < board.bits[0].length) {
+      board.bits[loc.y][loc.x] = bit;
+      // console.log(`placing ${toLabel(bit)} BALL: ${loc.x} ${loc.y}`);
+    } else {
+      // console.log(`cannot place ${toLabel(bit)} BALL: ${loc.x} ${loc.y}`);
+    }
   }
 
   static draw = (b: bitBall, x: number, y: number, ctx: CanvasRenderingContext2D, styles: StyleService): void => {
-
+    if (ctx) {
       ctx.beginPath(); // Otherwise the stroke will join to the next stroked shape
       ctx.fillStyle = b === 0 ? styles.getColour(Colour.DARK_GREY) : styles.getColour(Colour.SKY);
 
@@ -27,7 +31,8 @@ export class Ball {
       ctx.stroke();
 
       ctx.fill();
-      console.log(`drawing ${toLabel(b)} ball: ${x}+${Ball.offset} ${y}+${Ball.offset}`);
+      // console.log(`drawing ${toLabel(b)} ball: ${x}+${Ball.offset} ${y}+${Ball.offset}`);
+    }
   }
 
   private static strokeColour = (b: bitBall): string => match(b)

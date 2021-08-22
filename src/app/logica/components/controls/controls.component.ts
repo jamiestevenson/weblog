@@ -20,6 +20,8 @@ export class ControlsComponent {
   loadClick: EventEmitter<void> = new EventEmitter<void>();
   @Output()
   runClick: EventEmitter<boolean> = new EventEmitter<boolean>();
+  @Output()
+  tickClick: EventEmitter<void> = new EventEmitter<void>();
 
   constructor() { }
 
@@ -31,6 +33,12 @@ export class ControlsComponent {
   handleRunClick(): void {
     this.isRunning = !this.isRunning;
     this.runClick.emit(this.isRunning);
+  }
+
+  handleTickClick(): void {
+    if (this.isRunning) {
+      this.tickClick.emit();
+    }
   }
 
   get runningLabel(): string {

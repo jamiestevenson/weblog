@@ -18,15 +18,17 @@ export class And {
       row.forEach((value, xIndex) => {
           if (value !== Tile.NIL) {
             board.tiles[loc.y + yIndex][loc.x + xIndex] = value;
-            console.log(`placing AND: ${loc.x}+${xIndex} ${loc.y}+${yIndex}`);
+            // console.log(`placing AND: ${loc.x}+${xIndex} ${loc.y}+${yIndex}`);
           }
       });
     });
   }
 
   static draw = (x: number, y: number, ctx: CanvasRenderingContext2D, styles: StyleService) => {
-    ctx.fillStyle = styles.getColour(And.colour);
-    ctx.fillRect(x, y, And.width, And.height);
-    console.log(`drawing rectangle: ${x} ${y}`);
+    if(ctx) {
+      ctx.fillStyle = styles.getColour(And.colour);
+      ctx.fillRect(x, y, And.width, And.height);
+      // console.log(`drawing rectangle: ${x} ${y}`);
+    }
   }
 }
