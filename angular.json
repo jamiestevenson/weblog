@@ -61,9 +61,7 @@
               "fileReplacements": [
               ],
               "optimization": false,
-              "outputHashing": "all",
               "sourceMap": true,
-              "extractCss": false,
               "namedChunks": true,
               "extractLicenses": false,
               "vendorChunk": false,

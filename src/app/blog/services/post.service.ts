@@ -31,14 +31,13 @@ export class PostService {
   }
 
   getLatestPost(): Observable<BlogPost> {
-    this.POSTS.pipe(
+    return this.POSTS.pipe(
       map( posts => {
         if (posts.length > 0) {
           return posts[posts.length - 1];
         }
       })
     );
-    return of();
   }
 
   private initialisePosts(): Observable<BlogPost[]> {

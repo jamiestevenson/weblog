@@ -1,13 +1,15 @@
 <div class="grid">
   <!-- Canvas element with reference variable (https://angular.io/guide/template-reference-variables) -->
+  <div>
     <canvas #board class="game-board"></canvas>
-    <div class="right-column">
-      <app-controls
-      [lowBits]="tokens?.offBits"
-      [highBits]="tokens?.onBits"
-      [level]="sidebar?.id"
-      (loadClick)="handleLoadLevelClick()"
-      (runClick)="handleRunClick($event)">
-      </app-controls>
-    </div>
   </div>
+  <div class="right-column">
+    <app-controls
+    [lowBits]="tokens?.offBits"
+    [highBits]="tokens?.onBits"
+    [level]="sidebar?.id"
+    (loadClick)="handleLoadLevelClick()"
+    (runClick)="handleRunClick($event)">
+    </app-controls>
+  </div>
+</div>
