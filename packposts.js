@@ -9,7 +9,7 @@ var paths = [];
 files
   .filter( f => f !== 'index.txt')
   .forEach(f => {
-    paths.push(`${PATH}/${f}`);
+    paths.push(`weblog/${PATH}/${f}`);
   });
 var fileContents = paths.join(`\r\n`);
 

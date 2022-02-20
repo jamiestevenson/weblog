@@ -11,6 +11,7 @@
     "start": "ng serve --configuration development --base-href /weblog/",
     "prebuild": "node packposts.js",
     "build": "ng build --base-href /weblog/",
+    "ci-build":"(npm run prebuild) & (ng build --configuration production --output-path docs --base-href /weblog/)",
     "test": "ng test",
     "lint": "ng lint"
   },
