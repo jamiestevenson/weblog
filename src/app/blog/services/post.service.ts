@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 
 import { BlogPost } from '../interfaces/';
 import { map, tap } from 'rxjs/internal/operators';
+import { environment } from 'src/environments/environment';
 const NAME_DELIMITER = '_';
 const TITLE_SPACER = '-';
 
@@ -49,7 +50,7 @@ export class PostService {
   }
 
   private getPostIndex(): Observable<string[]> {
-    return this.httpService.get('./assets/posts/index.txt', { responseType: 'text' })
+    return this.httpService.get('/weblog/assets/posts/index.txt', { responseType: 'text' })
     .pipe(
       map(result => result.split(`\r\n`))
     );
