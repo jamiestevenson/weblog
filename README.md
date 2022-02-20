@@ -54,3 +54,7 @@ To run `ng update` use `npm run ng update`
 
 You will probably need to use `Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Scope CurrentUser` in powershell to run this update then
 `Set-ExecutionPolicy -ExecutionPolicy Restricted -Scope CurrentUser` to restore the default setting.
+
+## References
+
+<https://saikiran1298.medium.com/how-to-host-an-angular-app-to-github-pages>

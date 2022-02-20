@@ -49,7 +49,7 @@ export class PostService {
   }
 
   private getPostIndex(): Observable<string[]> {
-    return this.httpService.get('/assets/posts/index.txt', { responseType: 'text' })
+    return this.httpService.get('./assets/posts/index.txt', { responseType: 'text' })
     .pipe(
       map(result => result.split(`\r\n`))
     );
