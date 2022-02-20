@@ -3,6 +3,7 @@
   "compileOnSave": false,
   "compilerOptions": {
     "baseUrl": "./",
+    "esModuleInterop": true,
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
     "declaration": false,
@@ -18,7 +19,7 @@
       "dom"
     ],
     "types": [
-      "node"
+      "node", "mocha"
     ],
     "typeRoots": [
       "./node_modules/@types"

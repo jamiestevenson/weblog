@@ -1,6 +1,11 @@
 {
   "name": "angular-weblog",
   "version": "0.0.0",
+  "browser": {
+    "fs": false,
+    "path": false,
+    "os": false
+  },
   "scripts": {
     "ng": "ng",
     "start": "ng serve --configuration development",
@@ -26,26 +31,31 @@
     "rxjs": "6.6.0",
     "ts-pattern": "3.2.4",
     "tslib": "2.3.1",
-    "zone.js": "0.11.4"
+    "zone.js": "^0.11.4"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "12.2.1",
     "@angular/cli": "12.2.1",
     "@angular/compiler-cli": "12.2.1",
-    "@types/jasmine": "3.5.0",
+    "@types/chai": "^4.2.21",
+    "@types/jasmine": "3.8.2",
     "@types/jasminewd2": "^2.0.10",
+    "@types/jest": "^27.0.1",
+    "@types/mocha": "^9.0.0",
     "@types/node": "^16.6.1",
     "codelyzer": "6.0.0",
-    "jasmine-core": "3.8.0",
+    "jasmine-core": "3.9.0",
     "jasmine-spec-reporter": "7.0.0",
-    "karma": "6.3.4",
+    "jest": "^27.1.0",
+    "karma": ">=6.3.14",
     "karma-chrome-launcher": "3.1.0",
     "karma-coverage-istanbul-reporter": "3.0.2",
     "karma-jasmine": "4.0.0",
     "karma-jasmine-html-reporter": "1.7.0",
     "protractor": "~7.0.0",
-    "ts-node": "10.1.0",
+    "ts-jest": "^27.0.5",
+    "ts-node": "10.2.1",
     "tslint": "6.1.3",
-    "typescript": "4.3.5"
+    "typescript": "^4.4.2"
   }
 }

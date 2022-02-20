@@ -1,22 +1,24 @@
 import 'jasmine';
 import 'zone.js/dist/zone-testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { WhrpPageComponent } from './whrp-page.component';
 
-import { HomeComponent } from './home.component';
 
-describe('HomeComponent', () => {
-  let component: HomeComponent;
-  let fixture: ComponentFixture<HomeComponent>;
+describe('whrpPageComponent', () => {
+  let component: WhrpPageComponent;
+  let fixture: ComponentFixture<WhrpPageComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ HomeComponent ]
+      declarations: [ WhrpPageComponent ],
+      providers: [
+      ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(HomeComponent);
+    fixture = TestBed.createComponent(WhrpPageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

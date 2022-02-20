@@ -1,3 +1,5 @@
+import 'jasmine';
+import 'zone.js/dist/zone-testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PostRendererComponent } from './post-renderer.component';
