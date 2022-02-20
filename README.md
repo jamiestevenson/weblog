@@ -17,7 +17,7 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 ### Building for GitHub Pages
 See: https://angular.io/guide/deployment#deploy-to-github-pages
 
-`ng build --prod --output-path docs --base-href /weblog/`
+`ng build --configuration:production --output-path docs --base-href /weblog/`
 
 Make a copy of docs/index.html and name it docs/404.html.
 Commit your changes and push.
