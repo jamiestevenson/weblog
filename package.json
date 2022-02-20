@@ -8,9 +8,9 @@
   },
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --configuration development",
+    "start": "ng serve --configuration development --base-href /weblog/",
     "prebuild": "node packposts.js",
-    "build": "ng build",
+    "build": "ng build --base-href /weblog/",
     "test": "ng test",
     "lint": "ng lint"
   },
