@@ -1,18 +1,12 @@
 import { ModuleWithProviders, NgModule, Optional, SkipSelf } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { StoreModule } from '@ngrx/store';
-import { StyleService } from './services/style.service';
-
-
 
 @NgModule({
-  declarations: [StyleService],
+  declarations: [],
   imports: [
     CommonModule,
   ],
-  exports: [
-    StyleService
-  ]
+  exports: []
 })
 export class CoreModule {
   constructor(@Optional() @SkipSelf() parentModule: CoreModule) {

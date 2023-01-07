@@ -17,6 +17,7 @@ export class PostService {
 
   constructor(private httpService: HttpClient) {
     this.POSTS = this.initialisePosts();
+    console.log(`Post service initialised: ${JSON.stringify(this.POSTS)}`);
   }
 
   getPosts(): Observable<BlogPost[]> {
@@ -47,20 +48,17 @@ export class PostService {
     const posts: Observable<BlogPost[]> = index.pipe(
       map(i => this.fetchPosts(i)),
     );
+    console.log(`Initialise posts: ${JSON.stringify(posts)}`);
     return posts;
   }
 
   private getPostIndex(): Observable<string[]> {
-    return this.httpService.get('/weblog/assets/posts/index.txt', { responseType: 'text' })
+    return this.httpService.get('assets/posts/index.txt', { responseType: 'text' })
     .pipe(
-      map(result => result.split(`\r\n`)),
-      map(paths => {
-        if (environment.production) {
-          return paths.map(path => `$weblog/${path}`)
-        }
-        return paths;
-      })
-    );
+      map((result: string) => { 
+        return result.split(/\r?\n/).filter(element => element);
+      }
+    ));
   }
 
   private fetchPosts(index: string[] ): BlogPost[] {
