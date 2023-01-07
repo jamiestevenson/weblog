@@ -1,1 +1,103 @@
 /* You can add global styles to this file, and also import other style files */
+
+html {-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%}
+
+* {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+/* Application-wide Styles */
+:host {
+    --colour-sun: #ff9f1c;
+    --colour-sand: #FFBF69;
+    --colour-cloud: #FFFFFF;
+    --colour-sky: #CBF3F0;
+    --colour-sea: #2EC4B6;
+}
+
+body {
+    background-color: var(--colour-cloud);
+    margin: 2em;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Limit and centre content*/
+.limited {
+    max-width: 1140px;
+    margin: auto;
+}
+
+.left {
+    float: left;
+    left: 0px;
+}
+
+/* GRID BASE*/
+
+.row {clear: both;} 
+.column {float: left; padding: 0 2vw; margin: 0 0 .75rem 0;} 
+.small-12 {width: 100%;} 
+.small-6 {width: 50%;}
+
+/* GRID BASE END */
+
+h1 {
+    color: var(--colour-sea);
+    font-size: 250%;
+}
+h2, h3 {
+    color: var(--colour-sea);
+    font-weight: lighter;
+}
+
+body, input[type="text"], button {
+    color: var(--colour-sea);
+    font-family: Cambria, Georgia;
+}
+
+nav a {
+    display: inline;
+    color: black;
+    padding: 8px 16px;
+    text-decoration: none;
+    text-align: center;
+}
+
+nav a:hover {
+    background-color: var(--colour-sun);
+    color: white;
+}
+
+nav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 80px;
+}
+
+/* MEDIUM */
+@media only screen and (min-width: 641px) { 
+    h1 { 
+        color: orange;
+    } 
+
+    /* GRID MEDIUM*/
+    .medium-6 {width: 50%;} 
+    .medium-4 {width: 33.33333%;}
+    /* GRID MEDIUM END */
+
+} /* End of media query */
+
+/* LARGE */
+@media only screen and (min-width: 1008px) { 
+    h1 { 
+        color: green;
+    } 
+
+    /* GRID MEDIUM*/
+    .large-3 {width: 25%;}
+    /* GRID MEDIUM END */
+
+} /* End of media query */

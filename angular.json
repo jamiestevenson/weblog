@@ -23,9 +23,6 @@
               "src/favicon.ico",
               "src/assets"
             ],
-            "styles": [
-              "src/styles.css"
-            ],
             "scripts": ["node_modules/marked/marked.min.js", "node_modules/emoji-toolkit/lib/js/joypixels.min.js"]
           },
           "configurations": {
@@ -76,6 +73,9 @@
                   "maximumWarning": "6kb",
                   "maximumError": "10kb"
                 }
+              ],
+              "styles": [
+                "src/styles.css", "src/small.css","src/medium.css","src/large.css"
               ]
             }
           }
@@ -112,7 +112,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css", "src/small.css","src/medium.css","src/large.css"
             ],
             "scripts": []
           }

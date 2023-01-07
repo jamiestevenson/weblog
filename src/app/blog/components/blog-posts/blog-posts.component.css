@@ -11,6 +11,7 @@
     padding: 0;
     width: 30em;
 }
+
 .posts li {
   cursor: pointer;
   position: relative;
@@ -21,19 +22,27 @@
   height: 1.6em;
   border-radius: 4px;
 }
+
 .posts li:hover {
   color: black;
   background-color: var(--colour-sand);
   left: .1em;
 }
+
 .posts li.selected {
   background-color: var(--colour-sand);
   color: var(--colour-cloud);
 }
+
 .posts li.selected:hover {
   background-color: var(--colour-sky);
   color: var(--colour-cloud);
 }
+
+.posts li a h4 {
+  font-size: 1rem;
+}
+
 .posts .badge {
   display: inline-block;
   font-size: small;
