@@ -2,18 +2,18 @@
 
 <ng-template #thenBlock>
     <div class="post-outer">
-        <p class="ref">ID: {{post.id}}</p>
+        <p class="ref left">ID: {{post.id}}</p>
         <h3 class>{{post.title | uppercase}}</h3>
-        <p class="ref">Originally Posted: {{post.date}}</p>
         <markdown ngPreserveWhitespaces [data]="post.body"></markdown>
+        <p class="ref right">Originally Posted: {{post.date}}</p>
     </div>
 </ng-template>
 
 <ng-template #elseBlock>
     <div class="post-outer">
-        <p class="ref">ID: -</p>
+        <p class="ref left">ID: -</p>
         <h3 class>          </h3>
-        <p class="ref">Originally Posted: -</p>
+        <p class="ref right">Originally Posted: -</p>
         <markdown ngPreserveWhitespaces >
             No previous posts
         </markdown>
