@@ -58,3 +58,11 @@ You will probably need to use `Set-ExecutionPolicy -ExecutionPolicy Unrestricted
 ## References
 
 <https://saikiran1298.medium.com/how-to-host-an-angular-app-to-github-pages>
+
+Generate ICO files with site colours:
+Text: J  
+Background: rounded 
+Font: Dosis 
+Font Variant: Extra-bold 800 normal
+Font Size 100
+https://favicon.io/favicon-generator
