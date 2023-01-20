@@ -8,6 +8,9 @@
   h4 {
     position: relative;
   }
+  .expand{
+    min-width: fit-content;
+  }
   .module {
     padding: 1px 20px 1px 20px;
     text-align: center;
