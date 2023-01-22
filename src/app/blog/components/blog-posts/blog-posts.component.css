@@ -19,7 +19,6 @@
   background-color: var(--colour-sun);
   margin: .5em;
   padding: .3em 0;
-  height: 1.6em;
   border-radius: 4px;
 }
 
@@ -44,16 +43,11 @@
 }
 
 .posts .badge {
-  display: inline-block;
   font-size: small;
   color: black;
-  padding: 0.8em 0.7em 0 0.7em;
+  padding: 0.55em 0.7em 0.4em 0.7em;
   background-color:var(--colour-sea);
-  line-height: 1em;
-  position: relative;
-  left: -1px;
-  top: -4px;
-  height: 1.8em;
+  line-height: 1.1em;
   margin-right: .8em;
   border-radius: 4px 0 0 4px;
 }

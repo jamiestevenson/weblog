@@ -1,5 +1,7 @@
   a {
     text-decoration: none;
+    display: inline-block;
+    text-align: center;
   }
   h3 {
     text-align: left;
@@ -7,9 +9,12 @@
   }
   h4 {
     position: relative;
+    margin: 5px;
   }
-  .expand{
+  .article-link {
     min-width: fit-content;
+    padding: 5px;
+    margin: 5px 10px;
   }
   .module {
     padding: 1px 20px 1px 20px;
