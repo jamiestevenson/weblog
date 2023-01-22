@@ -10,3 +10,4 @@ assets/posts/2021-08-14_posts-are-markdown-files.md
 assets/posts/2021-08-14_update-versions.md
 assets/posts/2021-08-22_logica-update.md
 assets/posts/2023-01-07_revisit.md
+assets/posts/2023-01-22_visualisation-a.md

@@ -6,3 +6,7 @@
   --colour-sky: #CBF3F0;
   --colour-sea: #2EC4B6;
 }
+
+.active-route {
+  font-weight: bold;
+}
