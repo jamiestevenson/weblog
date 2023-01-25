@@ -1,0 +1,14 @@
+<h3>Relationships Graph</h3>
+
+<figure id="relationships"></figure>
+
+<div id="graph-relationship">
+  <svg width="900" height="600">
+    <g class="links"></g>
+    <g class="nodes"></g>
+  </svg>
+</div>
+
+<code>
+  {{whrpService.getCharacterGraph() | async | json}}
+</code>

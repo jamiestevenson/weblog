@@ -54,3 +54,10 @@ nav {
     padding: 0;
     width: 80px;
 }
+
+div#graph-relationship svg g.links line {
+    stroke: var(--colour-sea);
+}
+div#graph-relationship svg g.nodes text {
+    font-size: 0.7em;
+}

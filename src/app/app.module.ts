@@ -13,6 +13,7 @@ import { StyleService } from './core/services/style.service';
 import { BlogModule } from './blog/blog.module';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { WhrpModule } from './whrp/whrp.module';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { HttpClientModule } from '@angular/common/http';
     // Local
     AppRoutingModule,
     BlogModule,
-    LogicaModule
+    LogicaModule,
+    WhrpModule,
   ],
   providers: [StyleService],
   bootstrap: [AppComponent]

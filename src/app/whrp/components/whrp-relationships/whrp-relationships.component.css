@@ -1,0 +1,6 @@
+circle {
+    fill: cadetblue;
+}
+line {
+    stroke: var(--colour-sea);
+}
