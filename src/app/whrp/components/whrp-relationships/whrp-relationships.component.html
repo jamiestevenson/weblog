@@ -4,11 +4,26 @@
 
 <div id="graph-relationship">
   <svg width="900" height="600">
-    <g class="links"></g>
-    <g class="nodes"></g>
+    <g>
+      <g class="links"></g>
+      <g class="nodes"></g>
+      <defs>
+        <marker
+          id="arrow"
+          viewBox="0 -5 10 10"
+          refX="20"
+          refY="0"
+          markerWidth="8"
+          markerHeight="8"
+          orient="auto"
+        >
+          <path d="M0,-5L10,0L0,5"></path>
+        </marker>
+      </defs>
+    </g>
   </svg>
 </div>
 
 <code>
-  {{whrpService.getCharacterGraph() | async | json}}
+  {{ whrpService.getCharacterGraph() | async | json }}
 </code>

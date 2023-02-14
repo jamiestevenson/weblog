@@ -57,7 +57,8 @@ export class WhrpRelationshipsComponent implements AfterViewInit {
         // @ts-ignore
         .attr('x2', dx2 => dx2.target.x)
         // @ts-ignore
-        .attr('y2', dy2 => dy2.target.y);
+        .attr('y2', dy2 => dy2.target.y)
+        .attr("marker-end", "url(#arrow)");
 
         let labelUpdate = d3.select('.nodes')
         .selectAll('circle')
@@ -86,5 +87,7 @@ export class WhrpRelationshipsComponent implements AfterViewInit {
   }
 
   // YOU ARE HERE - see https://www.d3indepth.com/force-layout/ rework to TS
+  // Also: https://stackoverflow.com/questions/39439608/d3-4-0-graph-with-directed-edges-and-labels 
+  // and https://jsfiddle.net/owen_rodda/55zk55ut/16/
 
 }

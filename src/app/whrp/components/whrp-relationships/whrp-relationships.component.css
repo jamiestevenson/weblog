@@ -4,3 +4,7 @@ circle {
 line {
     stroke: var(--colour-sea);
 }
+marker {
+    stroke: var(--colour-sea);
+    fill: var(--colour-sky);
+}
