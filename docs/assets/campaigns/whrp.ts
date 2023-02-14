@@ -36,7 +36,8 @@ const campaign: Campaign = {
             race: Race.Human,
             tags: ['doctor', 'lawyer', 'grey wizard', 'man of many words'],
             relationships: [
-                {type: 'Mentor', who: ['Vard']}
+                {type: 'Mentor', who: ['Vard']},
+                {type: 'Associate', who: ['Wilbert Schneider']}
             ]
         },
         {
@@ -133,7 +134,8 @@ const campaign: Campaign = {
             race: Race.Human,
             tags: ['riverfolk', 'duelist', 'heroic', 'determined'],
             relationships: [
-                {type: 'Amour', who: ['Sir Hrodbert de Pleisy']}
+                {type: 'Amour', who: ['Sir Hrodbert de Pleisy']},
+                {type: 'Associate', who: ['Fiona Hoffman']}
             ]
         },
         {
@@ -229,8 +231,8 @@ const campaign: Campaign = {
             race: Race.Human,
             tags: ['brettonian', 'knight', 'noble'],
             relationships: [
-                {type: 'Mount', who: ['Buttercup']}
-
+                {type: 'Mount', who: ['Buttercup']},
+                {type: 'Ward', who: ['Bruno']}
             ]
         },
         {
@@ -238,6 +240,12 @@ const campaign: Campaign = {
             player: 'Euan_T',
             tags: ['AKA Moonshadow', 'sylvan', 'mighty'],
             race: Race.Stag
+        },
+        {
+            name: 'Will',
+            player: 'Sean',
+            tags: ['not sure who this is'],
+            race: Race.Human
         },
         {
             name: 'Wilbert Schneider',

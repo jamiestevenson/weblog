@@ -2,8 +2,8 @@ import { AfterContentInit, AfterViewInit, Component, OnInit } from '@angular/cor
 import * as d3 from 'd3';
 import ForceGraph from './ForceGraph.js';
 import { WhrpService } from '../../services/whrp.service';
-import { SimulationNodeDatum } from 'd3';
-import { Relationship } from '../../../../../docs/assets/campaigns/types';
+import { SimulationNodeDatum } from 'd3' ;
+import { Relationship } from '../../../../assets/campaigns/types';
 
 @Component({
   selector: 'app-whrp-relationships',

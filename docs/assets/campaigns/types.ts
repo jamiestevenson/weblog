@@ -15,7 +15,7 @@ export interface Character {
     player: Player;
     race: Race;
     tags: string[];
-    relationships?: Relationship[]
+    relationships?: Relationship[];
 }
 
 export interface Relationship {
