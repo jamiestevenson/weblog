@@ -59,6 +59,17 @@ export class WhrpRelationshipsComponent implements AfterViewInit {
         // @ts-ignore
         .attr('y2', dy2 => dy2.target.y);
 
+        let labelUpdate = d3.select('.nodes')
+        .selectAll('circle')
+        .data(nodes)
+        .join('circle') // this will need to be changed to a 'g' element with a circle and text within
+        // @ts-ignore
+        .attr('cx', d => d.x )
+        // @ts-ignore
+        .attr('cy', e => e.y )
+        // @ts-ignore
+        .attr('r', 5);
+
         let nodeUpdate = d3.select('.nodes')
         .selectAll('text')
         .data(nodes)
@@ -66,9 +77,9 @@ export class WhrpRelationshipsComponent implements AfterViewInit {
          // @ts-ignore
         .text(dn => dn.name)
         // @ts-ignore
-        .attr('x', d => d.x )
+        .attr('x', d => d.x + 10 )
         // @ts-ignore
-        .attr('y', e => e.y )
+        .attr('y', e => e.y - 15 )
         // @ts-ignore
         .attr('dy', f => 10);
     });
