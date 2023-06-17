@@ -8,9 +8,9 @@
   },
   "scripts": {
     "ng": "ng",
-    "start": "nx serve --configuration development",
+    "start": "nx serve",
     "prebuild": "node packposts.js",
-    "build": "nx build --base-href /weblog/",
+    "build": "nx build",
     "ci-build": "(npm run prebuild) & (ng build --configuration production --output-path docs --base-href /weblog/)",
     "test": "nx test",
     "lint": "nx lint"

@@ -13,9 +13,9 @@
     max-width: 500px;
     min-width: fit-content;
     border-style: solid;
-    border-color: var(--colour-sea);
+    border-color: var(--colour-sky);
     border-radius: 2px;
-    border-width: 2px;
+    border-width: 5px;
 }
 
 .post-outer h3 {

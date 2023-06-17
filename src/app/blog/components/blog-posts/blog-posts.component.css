@@ -34,8 +34,12 @@
 }
 
 .posts li.selected:hover {
-  background-color: var(--colour-sky);
+  background-color: var(--colour-sand);
   color: var(--colour-cloud);
+}
+
+.posts li a {
+  background-color: var(--colour-sand);
 }
 
 .posts li a h4 {
@@ -46,7 +50,7 @@
   font-size: small;
   color: black;
   padding: 0.55em 0.7em 0.4em 0.7em;
-  background-color:var(--colour-sea);
+  background-color:var(--colour-sand);
   line-height: 1.1em;
   margin-right: .8em;
   border-radius: 4px 0 0 4px;
