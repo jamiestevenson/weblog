@@ -1,12 +1,120 @@
 /* Application-wide Styles */
 :host {
   --colour-sun: #ff9f1c;
-  --colour-sand: #FFBF69;
-  --colour-cloud: #FFFFFF;
-  --colour-sky: #CBF3F0;
-  --colour-sea: #2EC4B6;
+  --colour-sand: #ffbf69;
+  --colour-cloud: #ffffff;
+  --colour-sky: #cbf3f0;
+  --colour-sea: #2ec4b6;
 }
-
 .active-route {
   font-weight: bold;
+}
+.navbar {
+  border-top: 10px;
+  border-bottom: 10px;
+  padding: 10px 0px 10px 0px;
+  background-color: var(--colour-sea);
+}
+.navbar a {
+  min-width: fit-content;
+  padding: 5px 10px 5px 10px;
+  margin: 5px 10px;
+  border: 1px solid var(--colour-sky);
+  background-color: var(--colour-cloud);
+  border-radius: 5px;
+}
+.navbar a:hover {
+  border-color: var(--colour-cloud);
+  background-color: var(--colour-sky);
+}
+
+/* Background Wave Animaiton */
+/* Ref: https://alvarotrigo.com/blog/animated-backgrounds-css/ */
+/* * {
+  margin: 0;
+  padding: 0;
+  background-color: var(--colour-sea);
+} */
+.main-title {
+  position: relative;
+  width: 100%;
+  height: 20vh;
+  background: var(--colour-sand);
+  overflow: hidden;
+}
+.main-title header span img {
+  float: left;
+}
+.main-title-badge {
+  height: 75px;
+  width: 75px;
+  padding: 25px;
+  background-color: var(--colour-sand);
+}
+.main-title h1 {
+  background-color: var(--colour-sand);
+  font-size: 52px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 25px;
+}
+.main-title .air {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: url(../assets/wave-sea.png);
+  background-blend-mode: multiply;
+  background-size: 1000px 100px;
+}
+.main-title .air.air1 {
+  animation: wave 60s linear infinite;
+  z-index: 1000;
+  opacity: 1;
+  animation-delay: 0s;
+  bottom: 0;
+  background: url(../assets/wave-sea.png);
+  -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,0)), linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0));
+  -webkit-mask-size: 100% 95%;
+  -webkit-mask-repeat: repeat;
+  -webkit-mask-position: top;
+}
+.main-title .air.air2 {
+  animation: wave2 30s linear infinite;
+  z-index: 999;
+  opacity: 0.5;
+  animation-delay: -10s;
+  bottom: 10px;
+  background: url(../assets/wave.png);
+}
+.main-title .air.air3 {
+  animation: wave 60s linear infinite;
+  z-index: 998;
+  opacity: 0.2;
+  animation-delay: -4s;
+  bottom: 15px;
+}
+.main-title .air.air4 {
+  animation: wave2 60s linear infinite;
+  z-index: 997;
+  opacity: 0.5;
+  animation-delay: -10s;
+  bottom: 10px;
+  background: url(../assets/wave-sea-mosaic.png);
+}
+@keyframes wave {
+  0% {
+    background-position-x: 0px;
+  }
+  100% {
+    background-position-x: 1000px;
+  }
+}
+@keyframes wave2 {
+  0% {
+    background-position-x: 0px;
+  }
+  100% {
+    background-position-x: -1000px;
+  }
 }

@@ -8,12 +8,12 @@
   },
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --configuration development",
+    "start": "nx serve",
     "prebuild": "node packposts.js",
-    "build": "ng build --base-href /weblog/",
+    "build": "nx build",
     "ci-build": "(npm run prebuild) & (ng build --configuration production --output-path docs --base-href /weblog/)",
-    "test": "ng test",
-    "lint": "ng lint"
+    "test": "nx test",
+    "lint": "nx lint"
   },
   "private": true,
   "dependencies": {
@@ -40,6 +40,9 @@
     "@angular-devkit/build-angular": "15.2.4",
     "@angular/cli": "15.0.5",
     "@angular/compiler-cli": "15.0.4",
+    "@nx/angular": "16.3.2",
+    "@nx/workspace": "16.3.2",
+    "@schematics/angular": "15.0.5",
     "@types/chai": "^4.3.4",
     "@types/jasmine": "3.8.2",
     "@types/jasminewd2": "^2.0.10",
@@ -55,6 +58,7 @@
     "karma-coverage-istanbul-reporter": "3.0.2",
     "karma-jasmine": "4.0.0",
     "karma-jasmine-html-reporter": "1.7.0",
+    "nx": "16.3.2",
     "protractor": "~7.0.0",
     "ts-jest": "^27.1.5",
     "ts-node": "10.2.1",
