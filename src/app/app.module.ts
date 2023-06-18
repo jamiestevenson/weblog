@@ -14,6 +14,7 @@ import { BlogModule } from './blog/blog.module';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { WhrpModule } from './whrp/whrp.module';
+import { APP_BASE_HREF } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,10 @@ import { WhrpModule } from './whrp/whrp.module';
     LogicaModule,
     WhrpModule,
   ],
-  providers: [StyleService],
+  providers: [
+    {provide: APP_BASE_HREF, useValue: '/weblog'},
+    StyleService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
