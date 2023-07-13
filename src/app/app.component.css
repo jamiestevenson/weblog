@@ -68,7 +68,7 @@
   background-size: 1000px 100px;
 }
 .main-title .air.air1 {
-  animation: wave 60s linear infinite;
+  animation: wave 600s linear infinite;
   z-index: 1000;
   opacity: 1;
   animation-delay: 0s;
@@ -80,25 +80,23 @@
   -webkit-mask-position: top;
 }
 .main-title .air.air2 {
-  animation: wave2 30s linear infinite;
+  animation: wave2 200s linear infinite;
   z-index: 999;
   opacity: 0.5;
-  animation-delay: -10s;
-  bottom: 10px;
   background: url(../assets/wave.png);
 }
 .main-title .air.air3 {
-  animation: wave 60s linear infinite;
+  animation: wave 300s linear infinite;
   z-index: 998;
   opacity: 0.2;
-  animation-delay: -4s;
+  animation-delay: -40s;
   bottom: 15px;
 }
 .main-title .air.air4 {
-  animation: wave2 60s linear infinite;
+  animation: wave2 600s linear infinite;
   z-index: 997;
   opacity: 0.5;
-  animation-delay: -10s;
+  animation-delay: -100s;
   bottom: 10px;
   background: url(../assets/wave-sea-mosaic.png);
 }
@@ -107,7 +105,7 @@
     background-position-x: 0px;
   }
   100% {
-    background-position-x: 1000px;
+    background-position-x: 10000px;
   }
 }
 @keyframes wave2 {
@@ -115,6 +113,6 @@
     background-position-x: 0px;
   }
   100% {
-    background-position-x: -1000px;
+    background-position-x: -10000px;
   }
 }
